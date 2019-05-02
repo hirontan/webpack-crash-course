@@ -8,12 +8,13 @@ import _ from 'lodash'
 import './style.css'
 // console.log(style.toString()) // toString関数を持っているので、利用するとCSSが出力できる
 
+import './style.scss'
 import logo from './logo.png'
 
 function component() {
   const element = document.createElement('div')
   const array = ['Hello', 'webpack', '!!']
-  element.innerHtml = _.join(array, ' ')
+  element.innerHTML = _.join(array, ' ')
   return element
 }
 
