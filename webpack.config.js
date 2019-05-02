@@ -8,5 +8,8 @@ module.exports = {
   output: {                // どこに出力するのか設定する。絶対パスで設定する必要がある
     filename: 'main.js',
     path: outputPath
+  },
+  devServer: {
+    contentBase: outputPath // Document Rootの設定
   }
 }
