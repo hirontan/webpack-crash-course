@@ -17,6 +17,14 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico)$/i, // 大文字許容も`i`で設定
+        loader: 'url-loader',
+        options: {
+          limit: 2048,  // 2KBを超えるサイズは、分離できる
+          name: './images/[name].[ext]'
+        }
       }
     ]
   },
