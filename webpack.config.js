@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 const outputPath = path.resolve(__dirname, 'dist') // resolve：絶対パスを生成する
 console.log({outputPath})
@@ -11,6 +12,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.css$/,
         use: [
@@ -33,10 +39,20 @@ module.exports = {
           limit: 2048,  // 2KBを超えるサイズは、分離できる
           name: './images/[name].[ext]'
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       }
     ]
   },
   devServer: {
     contentBase: outputPath // Document Rootの設定
-  }
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html'
+    })
+  ]
 }
