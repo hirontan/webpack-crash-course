@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "kind-of": "~6.0.3",
-    "lodash": "~4.17.19",
+    "lodash": "~4.17.21",
     "minimist": "~1.2.3",
     "react": "~16.8.6",
     "react-dom": "~16.8.6"
